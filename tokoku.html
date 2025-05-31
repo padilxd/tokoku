@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadilXD Store</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f1a;
+            color: white;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .dark-mode {
+            background-color: #ffffff;
+            color: black;
+        }
+        .header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: #111;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav button {
+            background: transparent;
+            color: white;
+            border: 2px solid #2575fc;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .nav button:hover {
+            background: #2575fc;
+            color: white;
+        }
+        .home {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(145deg, #22234d, #1b1b38);
+            color: white;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+        }
+        .product {
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            background: linear-gradient(145deg, #22234d, #1b1b38);
+            color: white;
+            width: 320px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+        .hover-popup {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+        }
+        .product:hover .hover-popup {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        PadilXD Store
+    </div>
+    <div class="nav">
+        <button onclick="location.href='#home'">Home</button>
+        <button onclick="location.href='#produk'">Produk</button>
+        <button onclick="location.href='https://wa.me/6285174070837'">Kontak</button>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <div id="home" class="home">
+        <h1>Selamat Datang di PadilXD Store</h1>
+        <p>Tempat terbaik untuk menemukan sepatu olahraga terbaik dengan harga terbaik!</p>
+    </div>
+    <div id="produk">
+        <h2 style="text-align: center;">Produk</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://pbs.twimg.com/profile_images/701619883260260354/cTdqlDUg_400x400.jpg" alt="Produk 1">
+                <h2>Specs</h2>
+                <p>Harga: Rp 500.000+</p>
+                <div class="hover-popup">Sepatu olahraga berkualitas tinggi.</div>
+            </div>
+            <div class="product">
+                <img src="https://th.bing.com/th/id/OIP.53egoTCmDCk-fcnB7Q2e7QHaHa?rs=1&pid=ImgDetMain" alt="Produk 2">
+                <h2>Ortuseight</h2>
+                <p>Harga: Rp 400.000+</p>
+                <div class="hover-popup">Desain stylish dengan bahan premium.</div>
+            </div>
+            <div class="product">
+                <img src="https://kickoffsports.id/wp-content/uploads/elementor/thumbs/mills-py9z5n8pd6pcqk30ortmpx9phqgqf81eeiv85d4aew.jpg" alt="Produk 3">
+                <h2>Mills</h2>
+                <p>Harga: Rp 350.000+</p>
+                <div class="hover-popup">Nyaman untuk lari dan aktivitas sehari-hari.</div>
+            </div>
+            <div class="product">
+                <img src="https://cdn3d.iconscout.com/3d/free/thumb/free-nike-3d-logo-download-in-png-blend-fbx-gltf-file-formats--footwear-brand-social-media-pack-company-logos-4781238.png?f=webp" alt="Produk 4">
+                <h2>Nike Air Max</h2>
+                <p>Harga: Rp 2.000.000+</p>
+                <div class="hover-popup">Teknologi terbaru untuk kenyamanan maksimal.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <footer style="
+        background: linear-gradient(135deg, #1b1b38, #0f0f1a);
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 14px;
+        margin-top: 50px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    ">
+        <p>&copy; 2025 PadilXD Store. All rights reserved.</p>
+        <p>Follow kami di:
+            <a href="https://www.instagram.com/padilxd_?igsh=bHc1ZmlkNXp1d2Rp target="_blank" style="color: #2575fc; text-decoration: none;">Instagram</a> |
+            <a href="https://facebook.com/" target="_blank" style="color: #2575fc; text-decoration: none;">Facebook</a> |
+            <a href="https://tiktok.com/" target="_blank" style="color: #2575fc; text-decoration: none;">TikTok</a>
+        </p>
+        <p>Made with ❤️ by PadilXD</p>
+    </footer>
+
+</body>
+</html>
